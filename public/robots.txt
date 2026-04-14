@@ -1,0 +1,19 @@
+User-agent: Googlebot
+Allow: /
+Disallow: /indian-hill
+
+User-agent: Bingbot
+Allow: /
+Disallow: /indian-hill
+
+User-agent: Twitterbot
+Allow: /
+Disallow: /indian-hill
+
+User-agent: facebookexternalhit
+Allow: /
+Disallow: /indian-hill
+
+User-agent: *
+Allow: /
+Disallow: /indian-hill

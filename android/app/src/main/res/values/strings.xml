@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PHORI LAB</string>
+    <string name="title_activity_main">PHORI LAB</string>
+    <string name="package_name">com.credo.phorilab</string>
+    <string name="custom_url_scheme">com.credo.phorilab</string>
+</resources>

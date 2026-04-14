@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Studio Design System - Modern, Sleek, Minimal */
+
+@layer base {
+  :root {
+    /* Deep black studio background */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    /* Card styling */
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    /* Popovers */
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary - Pure white for emphasis */
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 4%;
+
+    /* Secondary - Dark grey */
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted - Mid grey */
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 55%;
+
+    /* Accent */
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 0 0% 98%;
+
+    --radius: 0.5rem;
+
+    /* Custom studio tokens */
+    --studio-glow: 0 0 60px rgba(255, 255, 255, 0.05);
+    --studio-gradient: linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 8%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Tektur', sans-serif;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Tektur', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
+  }
+}
+
+@layer components {
+  /* Studio container */
+  .studio-container {
+    @apply max-w-7xl mx-auto px-6 md:px-12;
+  }
+
+  /* Hero title font - Bold display */
+  .hero-title {
+    font-family: 'Tektur', sans-serif;
+    font-weight: 900;
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-foreground via-foreground/80 to-muted-foreground bg-clip-text text-transparent;
+  }
+
+  /* Typing cursor animation */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .typing-cursor::after {
+    content: '|';
+    animation: blink 1s infinite;
+    margin-left: 2px;
+  }
+
+  /* Spin animation for loading */
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 2s linear infinite;
+  }
+
+  /* Page transition */
+  @keyframes page-enter {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .page-enter {
+    animation: page-enter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Rotating text animation */
+  @keyframes rotate-text {
+    0% { transform: rotateX(-90deg); opacity: 0; }
+    10% { transform: rotateX(0deg); opacity: 1; }
+    90% { transform: rotateX(0deg); opacity: 1; }
+    100% { transform: rotateX(90deg); opacity: 0; }
+  }
+
+  .rotate-text-enter {
+    animation: rotate-text 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+}
+
+/* Carousel partial visibility styles */
+.carousel-container {
+  @apply overflow-hidden;
+}
+
+.carousel-item-partial {
+  @apply transition-all duration-300;
+}
+
+.carousel-item-partial:hover {
+  @apply scale-[1.02];
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}

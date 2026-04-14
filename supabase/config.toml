@@ -1,0 +1,22 @@
+project_id = "byqymmpfnysxoegnqjbw"
+
+[functions.track-controls]
+verify_jwt = false
+
+[functions.submit-feedback]
+verify_jwt = false
+
+[functions.create-checkout]
+verify_jwt = false
+
+[functions.verify-payment]
+verify_jwt = false
+
+[functions.generate-snippet]
+verify_jwt = false
+
+[functions.send-notification]
+verify_jwt = false
+
+[functions.create-xlr8-checkout]
+verify_jwt = false
